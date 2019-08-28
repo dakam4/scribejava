@@ -146,8 +146,9 @@
                 <version>3.8.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
-                    <release>${java.release}</release>
                     <showDeprecation>true</showDeprecation>
+					<source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -178,24 +179,6 @@
                 <executions>
                     <execution>
                         <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.1</version>
-                <configuration>
-                    <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
-                    <encoding>UTF-8</encoding>
-                    <additionalOptions>-html5</additionalOptions>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>attach-javadoc</id>
                         <goals>
                             <goal>jar</goal>
                         </goals>
@@ -272,7 +255,7 @@
     </build>
 
     <properties>
-        <java.release>7</java.release>
+        <java.release>8</java.release>
         <pmdVersion>6.17.0</pmdVersion>
     </properties>
 

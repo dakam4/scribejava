@@ -121,6 +121,10 @@ public class OAuth20Service extends OAuthService {
         api.getClientAuthentication().addClientAuthentication(request, getApiKey(), getApiSecret());
 
         request.addParameter(OAuthConstants.CODE, params.getCode());
+        final String clientId = params.getClientId();
+        if (clientId != null){
+            request.addParameter("client_id", clientId);
+        }
         final String callback = getCallback();
         if (callback != null) {
             request.addParameter(OAuthConstants.REDIRECT_URI, callback);
