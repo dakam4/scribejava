@@ -123,7 +123,7 @@ public class OAuth20Service extends OAuthService {
         request.addParameter(OAuthConstants.CODE, params.getCode());
         final String clientId = params.getClientId();
         if (clientId != null){
-            request.addParameter("client_id", clientId);
+            request.addParameter(OAuthConstants.CLIENT_ID, clientId);
         }
         final String callback = getCallback();
         if (callback != null) {
